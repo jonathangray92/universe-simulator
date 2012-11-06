@@ -11,10 +11,11 @@ from os.path import exists as path_exists
 
 class Graphics(object):
 	""" Each object of this class handles the graphics of a universe object. """
-	def __init__(self, universe):
+	def __init__(self, universe, save_dir):
 		""" Initialize an object with the universe object to visualize. """
 		assert type(universe) == Universe
 		self.universe = universe
+		self.dir = save_dir
 		self.fig = plt.figure()
 		self.ax = self.fig.add_subplot(111)
 
@@ -37,7 +38,7 @@ class Graphics(object):
 		# Generate the plot
 		self.generate_plot()
 		# Create save directory
-		directory = './dumps/%s/' % str(int(self.universe.init_time))
+		directory = self.dir + '/%s/' % str(int(self.universe.init_time))
 		if not path_exists(directory):
 			makedirs(directory)
 		# Save image file

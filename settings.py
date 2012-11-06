@@ -15,3 +15,6 @@ LEAF_MAX = 20
 
 # Gravity parameters
 GRAV = 0.01
+
+# Graphics Parameters
+GRAPHICS_DIR = './dumps/'
