@@ -107,7 +107,9 @@ class QTree():
 			(quad, opp_x, opp_y, opp_diag) = (self.sub_NW, self.sub_NE, self.sub_SW, self.sub_SE)
 
 		# Always yield the root and traverse the quadrant in which P is located
-		yield (self.root, 1)
+		# Note: P is not considered to be a neighbour of P, so don't yield it
+		if self.root != P:
+			yield (self.root, 1)
 		if quad: 
 			for y in quad.traverse_neighbours(P, d): 
 				yield y

@@ -30,9 +30,9 @@ class Particle(object):
 		else:
 			raise Exception('Unknown parameter passed to Particle.__init__()')
 
-	def __str__(self):
+	def __repr__(self):
 		""" String representation is a 4-tuple of position, velocity. """
-		return '(%f, %f, %f, %f)' % (self.p.x, self.p.y, self.v.x, self.v.y)
+		return '<Particle: (%f, %f, %f, %f)>' % (self.p.x, self.p.y, self.v.x, self.v.y)
 	
 	def update_position(self):
 		""" Updates position vector by current velocity. """
