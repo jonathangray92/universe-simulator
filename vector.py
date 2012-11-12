@@ -58,9 +58,9 @@ class Vector(object):
 		""" Overloads constant * Vector syntax. """
 		return self.__mul__(other)
 
-	def __str__(self):
+	def __repr__(self):
 		""" Returns string representation of vector. """
-		return '(%f, %f)' % (self.x, self.y)
+		return '<Vector (%f, %f)>' % (self.x, self.y)
 
 	def __sub__(self, other):
 		""" Overloads Vector - Vector syntax. """
@@ -81,3 +81,7 @@ class Vector(object):
 		""" Returns the norm of the vector. """
 		return (self.x**2 + self.y**2)**(0.5)
 
+
+
+def euclidean(a, b):
+	return ((a.get_x() - b.get_x())**2 + (a.get_y() - b.get_y())**2)**.5
